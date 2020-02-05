@@ -36,27 +36,30 @@ class MiscFuncs():
 
     def __init__(self):
         pass
-
-    def entropy(self,X):
+    
+    @staticmethod
+    def entropy(X):
         """Return entropy of probability vector X"""
     
         f = lambda x: x * np.log2(x)
         vf = np.vectorize(f)
         return -1 * np.sum(vf(X))
-
-    def max_entropy(self,N):
+    
+    @staticmethod
+    def max_entropy(N):
         """Return entropy of event with N outcomes assuming uniform distribution"""
     
         return np.log2(N)
-
-    def kl_divergence(self,px,qx):
+        
+    @staticmethod
+    def kl_divergence(px,qx):
         """Return KL divergence between p(x) and q(x)"""
 
         f = lambda p,q: p * np.log2(p.q)
         vf = np.vectorize(f)
         return np.sum(vf(px,qx))
-
-    def zipf(self,k):
+    
+    def zipf(k):
         """Return entropy of alphabet with k symbols following Zipf's law
 
         Zipf's law: if k letters are ordered according to frequency, the probability of
@@ -69,6 +72,7 @@ class MiscFuncs():
         probs = c * series.series
         return self.entropy(probs) 
      
+    @staticmethod
     def typical_set(self,n,H):
         """Return size of typical set given length n and entropy H. Uses AEP (Asymptotic Equapartition Property): |A_e^n| -> 2^nH as n -> infinity.
             A_e^n is set of typical sequences of length n with limit in probability -> 1 - e
@@ -89,7 +93,6 @@ class MiscFuncs():
 
         return self.count_perms(n,k,with_replace = False) / factorial(k)
 
-Funcs = MiscFuncs()
 
 if __name__ == "main":
     Funcs = MiscFuncs()
