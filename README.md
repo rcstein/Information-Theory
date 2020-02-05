@@ -12,4 +12,4 @@
 
 The **HarmonicSeries** class instantiates a numpy array with the first k numbers of the harmonic series. This is useful for finding the entropy of an alphabet under Zipf's law, a probability distribution over the letters of an alphabet. 
 
-**Simulations.py** applies information theory concepts to specific situations. The **BinaryBayes** class takes a discrete marginal probability distribution and likelihood function over a binary variable and outputs the posterior distribution given an observation. This can be seen as a reduction of entropy in the system, given an observation. 
+**Simulations.py** applies information theory concepts to specific situations. The **BinaryBayes** class defines a system with a discrete marginal probability distribution over a binary random variable and a likelihood function over a binary set of observations. It has a method to compute the posterior distribution given an observation. This can be seen as a binary assymetric channel in which an observation reduces the entropy. 
