@@ -25,12 +25,12 @@ class HarmonicSeries():
         temp = np.arange(1,n+1)
         f = lambda x: 1. / x
         vf = np.vectorize(f)
-        self.series = vf(temp)
+        self._series = vf(temp)
 
     def add(self):
         """Return sum of first n numbers in harmonic series"""
 
-        return np.sum(self.series)
+        return np.sum(self._series)
 
 class MiscFuncs():
 
